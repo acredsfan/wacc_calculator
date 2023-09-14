@@ -1,0 +1,22 @@
+classDiagram
+    class WACC{
+        +float equity
+        +float debt
+        +float equity_cost
+        +float debt_cost
+        +float tax_rate
+        +__init__(equity: float, debt: float, equity_cost: float, debt_cost: float, tax_rate: float)
+        +calculate(): float
+    }
+    class Parser{
+        +str file_path
+        +__init__(file_path: str)
+        +parse(): (float, float, float, float, float)
+    }
+    class Main{
+        +str file_path
+        +__init__(file_path: str)
+        +run(): None
+    }
+    Main -- Parser: uses
+    Main -- WACC: uses

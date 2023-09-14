@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant M as Main
+    participant P as Parser
+    participant W as WACC
+    M->>P: parse(file_path)
+    P-->>M: (equity, debt, equity_cost, debt_cost, tax_rate)
+    M->>W: __init__(equity, debt, equity_cost, debt_cost, tax_rate)
+    M->>W: calculate()
+    W-->>M: wacc
